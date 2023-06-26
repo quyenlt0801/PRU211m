@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3439671300872503209}
   - component: {fileID: 3439671300872503208}
   - component: {fileID: 3657775871361803591}
+  - component: {fileID: -8572705126527597778}
   m_Layer: 0
   m_Name: CreepLevel2
   m_TagString: Untagged
@@ -197,6 +198,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.232843, y: 3.147375}
   m_EdgeRadius: 0
+--- !u!114 &-8572705126527597778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3439671300872503207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1ec854ef4c4d142aefcfb209199540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &4314682283769591903
 GameObject:
   m_ObjectHideFlags: 0
