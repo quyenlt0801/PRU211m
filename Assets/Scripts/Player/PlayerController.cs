@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         moveSpeed = 5f;
     }
 
+    
     public void MoveUp()
     {
         rb.velocity = Vector2.up * moveSpeed;
