@@ -19,6 +19,7 @@ public class Bullet_Player : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            ScoresManage.scoresCount += 10;
         }
     }
 }
