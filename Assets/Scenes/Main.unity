@@ -800,13 +800,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8d1e847fc5aa249b9ecff4c2317e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterPrefabs:
+  - {fileID: 2351086326171942440, guid: 2b14d7e83f956d0428ef9d80d2b22c9d, type: 3}
+  - {fileID: 208851432365169793, guid: adc9dc916f4c33f4db66489ad944c4c9, type: 3}
+  - {fileID: 7829312817397080319, guid: 9aeecfe084baec749989df34d5395a8e, type: 3}
   spawnlv1: {fileID: 2351086326171942440, guid: 2b14d7e83f956d0428ef9d80d2b22c9d, type: 3}
-  spawnlv2: {fileID: 7829312817397080319, guid: 9aeecfe084baec749989df34d5395a8e, type: 3}
-  spawnlv3: {fileID: 2351086326171942440, guid: 2b14d7e83f956d0428ef9d80d2b22c9d, type: 3}
+  spawnlv2: {fileID: 208851432365169793, guid: adc9dc916f4c33f4db66489ad944c4c9, type: 3}
+  spawnlv3: {fileID: 7829312817397080319, guid: 9aeecfe084baec749989df34d5395a8e, type: 3}
   maxX: 3
-  maxY: 4.5
+  maxY: 4
   minX: 3
-  minY: -4.5
+  minY: -4
   timeBetWeenSpawn: 3
 --- !u!4 &990868990
 Transform:
@@ -1155,6 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoresText: {fileID: 0}
+  moveLtoR: {fileID: 0}
 --- !u!1 &1297002651
 GameObject:
   m_ObjectHideFlags: 0
