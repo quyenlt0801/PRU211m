@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9a23a3d888f604199146f17f27a84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 60
   currentHealth: 0
   hearlthBar: {fileID: 1085821900}
 --- !u!1 &990868988
@@ -1061,8 +1061,8 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 20239
-    ctime1: 42212
+    ctime0: 28334
+    ctime1: 52814
     ctime2: 65535
     ctime3: 0
     ctime4: 0
