@@ -10,7 +10,7 @@ public class ScoresManage : MonoBehaviour
     public static int scoresCount;
 
     [SerializeField]
-    public MoveLtoR moveLtoR;
+    private MoveLtoR moveLtoR;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +25,11 @@ public class ScoresManage : MonoBehaviour
         scoresText.text = "Scores : " + scoresCount.ToString();
 
         // Gọi hàm UpdateSpeedByScore để cập nhật tốc độ trong script YourScript
-        if (scoresCount > 0)
-        {
-            moveLtoR.UpdateSpeedByScore(scoresCount);
-        }
 
+        if (scoresCount >= 100)
+        {
+            // moveLtoR.UpdateSpeedByScore(scoresCount);
+
+        }
     }
 }
