@@ -12,14 +12,14 @@ public class Bullet_Player : MonoBehaviour
         transform.Translate(Vector2.right * moveDistance);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Kiểm tra nếu vật thể va chạm là vật thể khác
-        if (collision.gameObject.CompareTag("Creeps"))
-        {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            ScoresManage.scoresCount += 10;
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    // Kiểm tra nếu vật thể va chạm là vật thể khác
+    //    if (collision.gameObject.CompareTag("Creeps"))
+    //    {
+    //        Destroy(gameObject);
+    //        Destroy(collision.gameObject);
+    //        ScoresManage.scoresCount += 10;
+    //    }
+    //}
 }
