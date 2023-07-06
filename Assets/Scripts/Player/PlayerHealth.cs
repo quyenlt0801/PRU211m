@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         //}
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Kiểm tra nếu vật thể va chạm là vật thể khác
         if (collision.gameObject.CompareTag("Creeps"))
