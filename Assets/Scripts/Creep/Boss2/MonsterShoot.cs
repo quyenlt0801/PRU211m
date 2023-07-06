@@ -1,16 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterShoot : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Prefab ??n
-    public float bulletSpeed = 10f; // T?c ?? ??n
-    public int bulletCount = 36; // S? l??ng ??n
-    public float bulletSpread = 10f; // G�c t?a ??n
-    public float timeBetweenBursts = 2f; // Th?i gian ch? gi?a c�c ch�m ??n
+    public GameObject bulletPrefab; // Prefab đạn
+    public float bulletSpeed = 10f; // Tốc độ đạn
+    public int bulletCount = 36; // Số lượng đạn
+    public float bulletSpread = 10f; // Góc tỏa đạn
+    public float timeBetweenBursts = 2f; // Thời gian chờ giữa các chùm đạn
 
-    private float timeSinceLastBurst = 0f; // Th?i gian k? t? l?n b?n ch�m ??n cu?i c�ng
+    private float timeSinceLastBurst = 0f; // Thời gian kể từ lần bắn chùm đạn cuối cùng
 
     // Start is called before the first frame update
     void Start()
@@ -25,28 +25,28 @@ public class MonsterShoot : MonoBehaviour
 
         if (timeSinceLastBurst >= timeBetweenBursts)
         {
-            ShootBullets(); // B?n ch�m ??n
-            timeSinceLastBurst = 0f; // ??t l?i th?i gian
+            ShootBullets(); // Bắn chùm đạn
+            timeSinceLastBurst = 0f; // Đặt lại thời gian
         }
     }
 
     private void ShootBullets()
     {
-        float angleStep = 360f / bulletCount; // G�c b??c gi?a c�c vi�n ??n
+        float angleStep = 360f / bulletCount; // Góc bước giữa các viên đạn
 
         for (int i = 0; i < bulletCount; i++)
         {
-            float angle = i * angleStep; // G�c c?a vi�n ??n hi?n t?i
+            float angle = i * angleStep; // Góc của viên đạn hiện tại
 
-            // T?o m?t ??i t??ng ??n t? prefab
+            // Tạo một đối tượng đạn từ prefab
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
 
-            // T�nh to�n h??ng v� v?n t?c c?a ??n
+            // Tính toán hướng và vận tốc của đạn
             Vector2 bulletDirection = Quaternion.Euler(0f, 0f, angle) * Vector2.up;
             Vector2 bulletVelocity = bulletDirection * bulletSpeed;
 
-            // Thi?t l?p v?n t?c cho ??n
+            // Thiết lập vận tốc cho đạn
             bulletRigidbody.velocity = bulletVelocity;
         }
     }
