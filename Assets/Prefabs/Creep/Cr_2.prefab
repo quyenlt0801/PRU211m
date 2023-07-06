@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 208851432365169795}
   - component: {fileID: 208851432365169792}
   - component: {fileID: 208851432365169796}
+  - component: {fileID: 6552956741698943424}
   m_Layer: 0
   m_Name: Cr_2
   m_TagString: Creeps
@@ -129,7 +130,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.093907595, y: 0.031301975}
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1ec854ef4c4d142aefcfb209199540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 5
+  initialSpeed: 3
 --- !u!114 &208851432365169796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +174,17 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2656921581632789629, guid: 4658f24f5e0d2624eb4cf2c513254aed, type: 3}
   firePoint: {fileID: 208851431192251945}
   fireRate: 1.5
+--- !u!114 &6552956741698943424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208851432365169793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814cb7a3387daef4a8480d269a77d358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  currentHealth: 0

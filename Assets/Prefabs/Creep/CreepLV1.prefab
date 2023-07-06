@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2351086326171942445}
   - component: {fileID: 2351086326171942442}
   - component: {fileID: 2351086326171942443}
+  - component: {fileID: -6006954061856850097}
   m_Layer: 0
   m_Name: CreepLV1
   m_TagString: Creeps
@@ -96,7 +97,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.032453835, y: 0}
@@ -114,4 +115,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1ec854ef4c4d142aefcfb209199540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 10
+  initialSpeed: 5
+--- !u!114 &-6006954061856850097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351086326171942440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814cb7a3387daef4a8480d269a77d358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  currentHealth: 0
