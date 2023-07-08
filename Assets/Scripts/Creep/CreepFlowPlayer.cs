@@ -25,6 +25,8 @@ public class CreepFlowPlayer : MonoBehaviour
         {
             nextFireTime = Time.time + 1f / fireRate;
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            AudioManage audio_manager = AudioManage.GetAudio();
+            audio_manager.ShootingCreeps();
             bullet.GetComponent<BulletFlow>().Target = Player.transform.position;
         }
     }

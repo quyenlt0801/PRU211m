@@ -6,16 +6,23 @@ public class AudioManage : MonoBehaviour
 {
     AudioSource audioSource;
     AudioClip shootingPlayer;
+    AudioClip shootingCreeps;
 
     void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();// audio Source
         shootingPlayer = Resources.Load<AudioClip>("Sound/laser_01");
+        shootingCreeps = Resources.Load<AudioClip>("Sound/laser_02");
+
 
     }
     public void ShootingPlayer()
     {
         audioSource.PlayOneShot(shootingPlayer);
+    }
+    public void ShootingCreeps()
+    {
+        audioSource.PlayOneShot(shootingCreeps);
     }
     public static AudioManage GetAudio()
     {

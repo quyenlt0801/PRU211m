@@ -40,6 +40,9 @@ public class MonsterShoot : MonoBehaviour
 
             // Tạo một đối tượng đạn từ prefab
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            AudioManage audio_manager = AudioManage.GetAudio();
+            audio_manager.ShootingCreeps();
+
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
 
             // Tính toán hướng và vận tốc của đạn

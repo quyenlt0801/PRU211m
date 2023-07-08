@@ -21,6 +21,8 @@ public class BulletCreep_LV2 : MonoBehaviour
 
     private void Shoot()
     {
-       Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        AudioManage audio_manager = AudioManage.GetAudio();
+        audio_manager.ShootingCreeps();
     }
 }
