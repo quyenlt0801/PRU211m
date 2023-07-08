@@ -42,8 +42,6 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            await Task.Delay(100);
-            ScoresManage.scoresCount = 0;
         }
     }
 }

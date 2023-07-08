@@ -8,7 +8,8 @@ public class MENU_Manager : MonoBehaviour
     // Start is called before the first frame update
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        ScoresManage.scoresCount = 0;
+        SceneManager.LoadScene(1); 
     }
     public void Quit()
     {

@@ -9,13 +9,10 @@ public class ScoresManage : MonoBehaviour
     TextMeshProUGUI scoresText;
     public static float scoresCount;
 
-    [SerializeField]
-    private MoveLtoR moveLtoR;
     // Start is called before the first frame update
     void Start()
     {
         scoresText = GetComponent<TextMeshProUGUI>();
-        moveLtoR = GetComponent<MoveLtoR>();
     }
 
     // Update is called once per frame
