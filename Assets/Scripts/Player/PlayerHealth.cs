@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         hearlthBar.SetHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
+           ScoresManage.scoresCount = 0;
             SceneManager.LoadScene(0);
         }
     }

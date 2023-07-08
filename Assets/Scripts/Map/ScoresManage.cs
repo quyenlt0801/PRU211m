@@ -7,7 +7,7 @@ public class ScoresManage : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI scoresText;
-    public static int scoresCount;
+    public static float scoresCount;
 
     [SerializeField]
     private MoveLtoR moveLtoR;
@@ -16,13 +16,20 @@ public class ScoresManage : MonoBehaviour
     {
         scoresText = GetComponent<TextMeshProUGUI>();
         moveLtoR = GetComponent<MoveLtoR>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoresText.text = "Scores : " + scoresCount.ToString();
+        if (GameObject.FindGameObjectWithTag("Players") != null)
+        {
+            scoresCount += 1 * Time.deltaTime;
+            scoresText.text = "Scores : " +((int)scoresCount).ToString();
+        }
+        else
+        {
+            scoresText.text = "Scores : " + 0;
+        }
 
         // Gọi hàm UpdateSpeedByScore để cập nhật tốc độ trong script YourScript
 
