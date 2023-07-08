@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,14 +35,15 @@ public class PlayerHealth : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    void TakeDame(int dame)
+    async void TakeDame(int dame)
     {
         currentHealth -= dame;
         hearlthBar.SetHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
-           ScoresManage.scoresCount = 0;
             SceneManager.LoadScene(0);
+            await Task.Delay(100);
+            ScoresManage.scoresCount = 0;
         }
     }
 }
