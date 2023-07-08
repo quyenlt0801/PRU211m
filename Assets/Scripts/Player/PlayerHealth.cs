@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         hearlthBar.SetHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            Destroy(gameObject);
             await Task.Delay(100);
             ScoresManage.scoresCount = 0;
         }
