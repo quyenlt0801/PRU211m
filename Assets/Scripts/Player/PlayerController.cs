@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Map;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
         if (canShoot)
         {
             Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            AudioManage audio_manager = AudioManage.GetAudio();
+            audio_manager.ShootingPlayer();
             shootTimer = 0f;
             canShoot = false;
         }
