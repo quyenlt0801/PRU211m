@@ -33,7 +33,6 @@ public class TakeDameForCreeps : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            ScoresManage.scoresCount += 10;
         }
     }
 }

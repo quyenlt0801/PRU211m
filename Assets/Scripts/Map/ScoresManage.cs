@@ -20,7 +20,7 @@ public class ScoresManage : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Players") != null)
         {
-            scoresCount += 1 * Time.deltaTime;
+            scoresCount += 5 * Time.deltaTime;
             scoresText.text = "Scores : " +((int)scoresCount).ToString();
         }
         else

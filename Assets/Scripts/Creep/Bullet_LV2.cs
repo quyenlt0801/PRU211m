@@ -16,4 +16,5 @@ public class Bullet_LV2 : MonoBehaviour
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
+
 }
