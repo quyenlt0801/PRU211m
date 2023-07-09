@@ -5,6 +5,11 @@ using UnityEngine;
 public class SpanwCreep_ver1 : MonoBehaviour
 {
     public List<GameObject> monsterPrefabs; // Danh sách Prefabs quái vật
+    public List<GameObject> bossPrefabs; // Danh sách Prefabs boss
+
+    public GameObject pointSpawnBoss;
+    public GameObject boss1;
+    public GameObject boss2;
 
     public GameObject spawnlv1;
     public GameObject spawnlv2;
@@ -36,24 +41,36 @@ public class SpanwCreep_ver1 : MonoBehaviour
     {
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
-        if (ScoresManage.scoresCount >= 0 && ScoresManage.scoresCount < 100)
+        if (GetScores() >= 0 && GetScores() < 100)
         {
             Instantiate(spawnlv1, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
 
-        }else if (ScoresManage.scoresCount >= 100 && ScoresManage.scoresCount < 200)
+        }
+        else if (GetScores() >= 100 && GetScores() < 200)
         {
             Instantiate(spawnlv2, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
 
-        }else if (ScoresManage.scoresCount >= 200 && ScoresManage.scoresCount < 300)
-        {
-            Instantiate(spawnlv3, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
         }
-        else if (ScoresManage.scoresCount >= 300)
+        else if (GetScores() >= 200)
         {
             int randomIndex = Random.Range(0, monsterPrefabs.Count);
             GameObject randomMonsterPrefab = monsterPrefabs[randomIndex];
-
             Instantiate(randomMonsterPrefab, transform.position + new Vector3(randomX, randomY, 0), Quaternion.identity);
         }
+        if (GetScores() > 0 && GetScores() % 300 == 0)
+        {
+            int Index = Random.Range(0, bossPrefabs.Count);
+            GameObject bossPrefab = bossPrefabs[Index];
+            Instantiate(bossPrefab, transform.position, Quaternion.identity);
+            Debug.Log("abc :" + Index);
+        }
+    }
+
+    private static float GetScores()
+    {
+        Debug.Log((int)ScoresManage.scoresCount);
+
+        return (int)ScoresManage.scoresCount;
+
     }
 }
