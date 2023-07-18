@@ -186,5 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814cb7a3387daef4a8480d269a77d358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodPrefab: {fileID: 3117261612812046791, guid: 4e45bead9278642499ebc8ffaf904dac, type: 3}
+  bloodDropChance: 0.05
   maxHealth: 200
   currentHealth: 0

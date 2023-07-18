@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class TakeDameForCreeps : MonoBehaviour
 {
+
+    public GameObject bloodPrefab; // Prefab cho đối tượng máu
+    public float bloodDropChance = 0.1f; // Xác suất rơi máu (5%)
+
     public int maxHealth = 100;
     public int currentHealth;
     // Start is called before the first frame update
@@ -25,6 +29,7 @@ public class TakeDameForCreeps : MonoBehaviour
         {
             TakeDame(100);
             Destroy(collision.gameObject);
+            
         }
     }
     void TakeDame(int dame)
@@ -33,6 +38,14 @@ public class TakeDameForCreeps : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+
+            int randomValue = Random.Range(0, 10);
+            Debug.Log("Random.value :" + randomValue);
+            if (randomValue == 0)
+            {
+                // Tạo một đối tượng máu và đặt vị trí là vị trí của quái
+                Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 }
