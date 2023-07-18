@@ -12,12 +12,13 @@ public class BulletFlow : MonoBehaviour
     {
         transform.Translate((transform.position - Target) * moveSpeed * Time.deltaTime * -1);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Kiểm tra nếu vật thể va chạm là vật thể khác
         if (collision.gameObject.CompareTag("Tuong"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
