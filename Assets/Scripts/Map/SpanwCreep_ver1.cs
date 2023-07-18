@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpanwCreep_ver1 : MonoBehaviour
 {
+    private GameObject Player;
+
     public List<GameObject> monsterPrefabs; // Danh sách Prefabs quái vật
     public List<GameObject> bossPrefabs; // Danh sách Prefabs boss
 
@@ -24,7 +26,7 @@ public class SpanwCreep_ver1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class SpanwCreep_ver1 : MonoBehaviour
         }
         else if (GetScores() >= 100 && GetScores() < 200)
         {
-            Instantiate(spawnlv2, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+            Instantiate(spawnlv2, transform.position + new Vector3(randomX, Player.transform.position.y, 0), transform.rotation);
 
         }
         else if (GetScores() >= 200)

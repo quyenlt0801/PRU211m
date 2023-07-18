@@ -7,7 +7,6 @@ public class TakeDameForCreeps : MonoBehaviour
 {
 
     public GameObject bloodPrefab; // Prefab cho đối tượng máu
-    public float bloodDropChance = 0.1f; // Xác suất rơi máu (5%)
 
     public int maxHealth = 100;
     public int currentHealth;
