@@ -34,7 +34,13 @@ public class PlayerHealth : MonoBehaviour
             TakeDame(20);
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Blood"))
+        {
+            IncreaseHealth(20);
+            Destroy(collision.gameObject);
+        }
     }
+
     async void TakeDame(int dame)
     {
         currentHealth -= dame;
@@ -43,5 +49,15 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void IncreaseHealth(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        hearlthBar.SetHealth(currentHealth);
     }
 }
