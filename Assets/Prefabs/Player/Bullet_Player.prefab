@@ -136,4 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6ef5cff46acd349842322fc7e6481f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 825572710501237307}
+  poolSize: 10
   moveSpeed: 15

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet_Player : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float moveSpeed = 5f;
+    
     private void Update()
     {
         float moveDistance = moveSpeed * Time.deltaTime;

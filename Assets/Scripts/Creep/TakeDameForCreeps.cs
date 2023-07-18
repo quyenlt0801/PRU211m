@@ -27,8 +27,7 @@ public class TakeDameForCreeps : MonoBehaviour
         if (collision.gameObject.CompareTag("BulletPlayer"))
         {
             TakeDame(100);
-            Destroy(collision.gameObject);
-            
+            collision.gameObject.SetActive(false);
         }
     }
     void TakeDame(int dame)

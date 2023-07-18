@@ -6074,6 +6074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 1584656823}
   bulletPrefab: {fileID: 825572710501237307, guid: 48c87a2a392b6d148b62c53a37d42752, type: 3}
+  poolSize: 5
   shootCooldown: 1
 --- !u!50 &779092820
 Rigidbody2D:
