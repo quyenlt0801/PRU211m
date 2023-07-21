@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/Prefabs/Player.meta
 guid: fc58d108bf80a274a8320cb86e080f99
 ========
 guid: cda4c8754da4cc0438826c459fc073e5
 >>>>>>>> 9685ab5 (add new assets Button and Player):Assets/Scripts/Player.meta
+=======
+guid: fc58d108bf80a274a8320cb86e080f99
+>>>>>>> Player
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
