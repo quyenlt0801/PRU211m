@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1449887627887497762}
   m_Layer: 0
   m_Name: Boss2
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,4 +134,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   currentHealth: 0
-  hearlthBar: {fileID: 1261562860274904350, guid: 83bc9b622df5c8144ae0b4756c843746, type: 3}
+  Explosion: {fileID: 7154532516263420199, guid: 7f1315a36e808d5468ca750257e928de, type: 3}

@@ -15,6 +15,7 @@ public class CreepBar : MonoBehaviour
     {
         Instance = this;
     }
+   
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;

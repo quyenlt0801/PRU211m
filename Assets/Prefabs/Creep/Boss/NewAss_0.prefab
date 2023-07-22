@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6261798467229311614}
   m_Layer: 0
   m_Name: NewAss_0
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2746500203952577103, guid: d582043ccda3c904fbfb0605c106638d, type: 3}
   bulletSpawnPoint: {fileID: 6261798467264378927}
   bulletSpeed: 10
-  fireRate: 1
+  fireRate: 0.7
 --- !u!114 &6261798467229311615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   currentHealth: 0
-  hearlthBar: {fileID: 0}
+  Explosion: {fileID: 7154532516263420199, guid: 7f1315a36e808d5468ca750257e928de, type: 3}
 --- !u!58 &6261798467229311614
 CircleCollider2D:
   m_ObjectHideFlags: 0

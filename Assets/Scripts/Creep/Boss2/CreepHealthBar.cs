@@ -7,7 +7,8 @@ public class CreepHealthBar : MonoBehaviour
     public int maxHealth = 500;
     public int currentHealth;
 
-    
+    public GameObject Explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,10 @@ public class CreepHealthBar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Kiểm tra nếu vật thể va chạm là vật thể khác
+        // Kiểm tra nếu vật thể va chạm là vật thể 
         if (collision.gameObject.CompareTag("BulletPlayer"))
         {
+            Instantiate(Explosion, transform.position, Quaternion.identity);
             TakeDame(100);
             collision.gameObject.SetActive(false);
         }
@@ -34,6 +36,4 @@ public class CreepHealthBar : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    
 }
