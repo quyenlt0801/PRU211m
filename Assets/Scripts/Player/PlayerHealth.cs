@@ -9,12 +9,12 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public HearlthBar hearlthBar;
+    public GameObject Explosion;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        hearlthBar.SetMaxHealth(maxHealth);
+        HearlthBar.Instance.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
     async void TakeDame(int dame)
     {
         currentHealth -= dame;
-        hearlthBar.SetHealth((int)currentHealth);
+        HearlthBar.Instance.SetHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
@@ -58,6 +58,6 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
-        hearlthBar.SetHealth(currentHealth);
+        HearlthBar.Instance.SetHealth(currentHealth);
     }
 }

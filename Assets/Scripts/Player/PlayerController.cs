@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
             {
                 bullet.transform.position = bulletSpawnPoint.position;
                 bullet.transform.rotation = Quaternion.identity;
+                
                 bullet.SetActive(true);
 
                 currentBulletIndex++;

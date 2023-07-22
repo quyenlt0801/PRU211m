@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604950698810002692}
   - component: {fileID: 4604950698810002695}
+  - component: {fileID: 7927825951657635898}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
@@ -82,7 +83,22 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2746500203952577103, guid: d582043ccda3c904fbfb0605c106638d, type: 3}
   bulletSpawnPoint: {fileID: 4604950698642213013}
   bulletSpeed: 5
-  fireRate: 1
+  fireRate: 2
+--- !u!114 &7927825951657635898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604950698810002699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eadc787302b0e7488c03bff07f2a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  currentHealth: 0
+  hearlthBar: {fileID: 0}
 --- !u!1 &4604950699745303744
 GameObject:
   m_ObjectHideFlags: 0

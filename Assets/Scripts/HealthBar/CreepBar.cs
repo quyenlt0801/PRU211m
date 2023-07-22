@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HearlthBar : MonoBehaviour
+public class CreepBar : MonoBehaviour
 {
-    public static HearlthBar Instance { get; private set; }
+    public static CreepBar Instance { get; private set; }
     public Slider slider;
 
     public Gradient gradient;
 
     public Image fill;
-
     private void Awake()
     {
         Instance = this;
     }
+   
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;

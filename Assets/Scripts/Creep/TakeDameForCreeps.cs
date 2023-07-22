@@ -10,6 +10,8 @@ public class TakeDameForCreeps : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+
+    public GameObject Explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class TakeDameForCreeps : MonoBehaviour
         // Kiểm tra nếu vật thể va chạm là vật thể khác
         if (collision.gameObject.CompareTag("BulletPlayer"))
         {
+            Instantiate(Explosion, transform.position, Quaternion.identity);
             TakeDame(100);
             collision.gameObject.SetActive(false);
         }
