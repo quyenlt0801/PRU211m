@@ -7,12 +7,12 @@ public class CreepHealthBar : MonoBehaviour
     public int maxHealth = 500;
     public int currentHealth;
 
-    public HearlthBar hearlthBar;
+    
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        hearlthBar.SetMaxHealth(maxHealth);
+        CreepBar.Instance.SetMaxHealth(maxHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +28,7 @@ public class CreepHealthBar : MonoBehaviour
     async void TakeDame(int dame)
     {
         currentHealth -= dame;
-        hearlthBar.SetHealth((int)currentHealth);
+        CreepBar.Instance.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
