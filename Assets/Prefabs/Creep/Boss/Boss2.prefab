@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6044971409330160547}
   - component: {fileID: 6044971409330160549}
   - component: {fileID: 6044971409330160548}
-  - component: {fileID: 8131891346146996974}
+  - component: {fileID: 1449887627887497762}
   m_Layer: 0
   m_Name: Boss2
   m_TagString: Untagged
@@ -120,7 +120,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.4899998
---- !u!114 &8131891346146996974
+--- !u!114 &1449887627887497762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6044971409330160544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814cb7a3387daef4a8480d269a77d358, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eadc787302b0e7488c03bff07f2a814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 0}
   maxHealth: 500
   currentHealth: 0
+  hearlthBar: {fileID: 1261562860274904350, guid: 83bc9b622df5c8144ae0b4756c843746, type: 3}

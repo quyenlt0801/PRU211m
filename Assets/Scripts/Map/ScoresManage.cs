@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoresManage : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI scoresText;
+    public float score;
     public static float scoresCount;
 
     // Start is called before the first frame update
     void Start()
     {
+        scoresCount = score;
         scoresText = GetComponent<TextMeshProUGUI>();
     }
 

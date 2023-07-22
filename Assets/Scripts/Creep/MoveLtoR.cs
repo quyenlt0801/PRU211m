@@ -18,8 +18,27 @@ public class MoveLtoR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Di chuyển vật thể sang trái với tốc độ hiện tại
-        transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
+        if (ScoresManage.scoresCount >= 100 && ScoresManage.scoresCount < 200)
+        {
+            currentLevel = 2;
+        }else if (ScoresManage.scoresCount > 200)
+        {
+            currentLevel = 3;
+        }
+
+
+        if (ScoresManage.scoresCount > 0 && currentLevel == 1)
+        {
+            transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
+        }
+        else if (ScoresManage.scoresCount >= 100 && currentLevel == 2)
+        {
+            transform.Translate(Vector2.left * (currentSpeed + 2) * Time.deltaTime);
+        }
+        else if (ScoresManage.scoresCount >= 200 && currentLevel == 3)
+        {
+            transform.Translate(Vector2.left * (currentSpeed + 5) * Time.deltaTime);
+        }
     }
 
     // Hàm này sẽ được gọi mỗi khi điểm số thay đổi
