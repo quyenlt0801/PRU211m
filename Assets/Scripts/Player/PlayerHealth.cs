@@ -13,8 +13,14 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        LoadPlayerData();
+        if (currentHealth <= 0)
+        {
+            // If the player's health is zero or negative after loading, reset it to max health
+            currentHealth = maxHealth;
+        }
         HearlthBar.Instance.SetMaxHealth(maxHealth);
+        HearlthBar.Instance.SetHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -32,13 +38,31 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Creeps"))
         {
             TakeDame(20);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Blood"))
         {
             IncreaseHealth(20);
             Destroy(collision.gameObject);
         }
+    }
+    private void LoadPlayerData()
+    {
+        // Load player's current health from PlayerPrefs
+        currentHealth = PlayerPrefs.GetInt("PlayerCurrentHealth", maxHealth);
+    }
+    private void OnDestroy()
+    {
+        // Save player's current health when the game object is destroyed (e.g., when the scene changes)
+        SavePlayerData();
+    }
+    private void SavePlayerData()
+    {
+        // Save player's current health to PlayerPrefs
+        PlayerPrefs.SetInt("PlayerCurrentHealth", currentHealth);
+
+        // Save PlayerPrefs data
+        PlayerPrefs.Save();
     }
 
     async void TakeDame(int dame)

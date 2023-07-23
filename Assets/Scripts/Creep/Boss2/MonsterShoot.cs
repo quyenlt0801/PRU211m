@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Common;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterShoot : MonoBehaviour
 {
     public GameObject bulletPrefab; // Prefab đạn
+    public List<GameObject> bulletPrefabPool;
+    public int poolSize = 36; // Kích thước của Pool (số lượng đối tượng trong Pool)
+
     public float bulletSpeed = 10f; // Tốc độ đạn
     public int bulletCount = 36; // Số lượng đạn
     public float bulletSpread = 10f; // Góc tỏa đạn
@@ -15,7 +19,8 @@ public class MonsterShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bulletPrefabPool = ObjectPool.Instance.InitializePool(bulletPrefab, poolSize);
+
     }
 
     // Update is called once per frame
@@ -39,7 +44,11 @@ public class MonsterShoot : MonoBehaviour
             float angle = i * angleStep; // Góc của viên đạn hiện tại
 
             // Tạo một đối tượng đạn từ prefab
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            GameObject bullet = ObjectPool.Instance.GetObjectFromPool(bulletPrefabPool);
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = Quaternion.identity;
+            bullet.SetActive(true);
+
             AudioManage audio_manager = AudioManage.GetAudio();
             audio_manager.ShootingCreeps();
 

@@ -38,7 +38,7 @@ public class TakeDameForCreeps : MonoBehaviour
         currentHealth -= dame;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
 
             int randomValue = Random.Range(0, 10);
             Debug.Log("Random.value :" + randomValue);
