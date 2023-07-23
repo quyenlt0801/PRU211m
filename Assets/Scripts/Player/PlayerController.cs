@@ -23,6 +23,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("PlayerPosX") || !PlayerPrefs.HasKey("PlayerPosY"))
+        {
+            Vector3 initialPosition = new Vector3(-9.48f, 0f, 0f);
+            transform.position = initialPosition;
+        }
+
         bullets = new List<GameObject>();
 
         for (int i = 0; i < poolSize; i++)
@@ -34,7 +40,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Count" + bullets.Count);
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5f;
-       
+        LoadPlayerData();
     }
     private void Update()
     {
@@ -46,6 +52,7 @@ public class PlayerController : MonoBehaviour
                 canShoot = true;
             }
         }
+        SavePlayerData();
     }
 
     public void MoveUp()
@@ -72,7 +79,7 @@ public class PlayerController : MonoBehaviour
             {
                 bullet.transform.position = bulletSpawnPoint.position;
                 bullet.transform.rotation = Quaternion.identity;
-                
+
                 bullet.SetActive(true);
 
                 currentBulletIndex++;
@@ -99,5 +106,29 @@ public class PlayerController : MonoBehaviour
         }
 
         return bullet;
+    }
+    private void LoadPlayerData()
+    {
+        // Load player position
+        float playerPosX = PlayerPrefs.GetFloat("PlayerPosX", -9.48f);
+        float playerPosY = PlayerPrefs.GetFloat("PlayerPosY", 0f);
+        Vector3 playerPosition = new Vector3(playerPosX, playerPosY, 0f);
+        transform.position = playerPosition;
+
+        // Load shoot timer
+        shootTimer = PlayerPrefs.GetFloat("ShootTimer", 0f);
+    }
+
+    private void SavePlayerData()
+    {
+        // Save player position
+        PlayerPrefs.SetFloat("PlayerPosX", transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosY", transform.position.y);
+
+        // Save shoot timer
+        PlayerPrefs.SetFloat("ShootTimer", shootTimer);
+
+        // Save PlayerPrefs data
+        PlayerPrefs.Save();
     }
 }

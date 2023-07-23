@@ -5562,7 +5562,7 @@ GameObject:
   - component: {fileID: 1066189557}
   - component: {fileID: 1066189556}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: HealthBarBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6372,7 +6372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3392904351301706435, guid: af8088b0a81ddc943b564a91e417b896, type: 3}
       propertyPath: score
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af8088b0a81ddc943b564a91e417b896, type: 3}
