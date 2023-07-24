@@ -14,9 +14,7 @@ public class ScoresManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Load the player's score from PlayerPrefs
-        LoadPlayerData();
-
+        scoresCount = score;
         scoresText = GetComponent<TextMeshProUGUI>();
     }
 
@@ -34,31 +32,5 @@ public class ScoresManage : MonoBehaviour
         }
 
         // Gọi hàm UpdateSpeedByScore để cập nhật tốc độ trong script YourScript
-
-        if (scoresCount >= 100)
-        {
-            // moveLtoR.UpdateSpeedByScore(scoresCount);
-        }
-    }
-
-    private void LoadPlayerData()
-    {
-        // Load player's score from PlayerPrefs
-        scoresCount = PlayerPrefs.GetFloat("PlayerScore", 0f);
-    }
-
-    private void SavePlayerData()
-    {
-        // Save player's score to PlayerPrefs
-        PlayerPrefs.SetFloat("PlayerScore", scoresCount);
-
-        // Save PlayerPrefs data
-        PlayerPrefs.Save();
-    }
-
-    private void OnDestroy()
-    {
-        // Save player's score when the game object is destroyed (e.g., when the scene changes)
-        SavePlayerData();
     }
 }
